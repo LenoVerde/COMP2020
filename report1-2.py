@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
+# In[38]:
 
 
 import matplotlib.pyplot as plt
- 
+
 #図の大きさとフォントサイズを設定
 plt.rcParams["font.size"] = 20
 plt.rcParams['figure.figsize'] = 12,10 
@@ -26,12 +26,13 @@ def do_logistic_growth(k, r, n0, t):
  
     return(datax, datay)
  
- 
-dataX, dataY= do_logistic_growth(100.0, 1.5, 1.0, 20)
-plt.plot(dataX, dataY)
- 
+for i in range(6):
+    r=i*0.60
+    dataX, dataY= do_logistic_growth(100.0, r, 1.0, 20)
+    plt.plot(dataX, dataY, label='r=' + str(round(i*0.60,1)))
 plt.xlabel("time")
 plt.ylabel("population size")
+plt.legend(loc = 'upper left')
 plt.show()
 
 
