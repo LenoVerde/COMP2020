@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[38]:
+# In[ ]:
 
 
 import matplotlib.pyplot as plt
@@ -19,12 +19,12 @@ def do_logistic_growth(t):
     s=0.1
     
     #捕食者に発見されて食べられる確率(da>db)
-    da=0.4
+    da=0.9
     db=0.1
     
     #自己増加割合(ra>rb)
-    ra=0.5
-    rb=0.4
+    ra=0.9
+    rb=0.8
     
     a=0.1
     
@@ -62,7 +62,7 @@ def do_logistic_growth(t):
  
     return(datax, datay, dataz,dataf,datah)
 
-dataX, dataY, dataZ, dataF, dataH = do_logistic_growth(10000)
+dataX, dataY, dataZ, dataF, dataH = do_logistic_growth(100000)
 
 plt.plot(dataX, dataY,label = "preySum")
 plt.plot(dataX, dataF,label = "prey1")
@@ -71,7 +71,7 @@ plt.plot(dataX, dataZ,label = "Predator")
 
 plt.xlabel("time step")
 plt.ylabel("population density")
-plt.legend(loc = 'upper left')
+plt.legend(loc = 'upper right')
 plt.show()
 
 
